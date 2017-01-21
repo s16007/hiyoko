@@ -8,13 +8,15 @@ public class Stage : MonoBehaviour {
 	GameObject itemer;
 	Player takeItem;
 
+	// 食材の獲得数のテキスト
 	public Text LabelGohan;
 	public Text LabelNiku;
 	public Text LabelTamago;
 
-	int no1 = 0;
-	int no2 = 0;
-	int no3 = 0;
+	// 食材の獲得数
+	public int no1 = 0;
+	public int no2 = 0;
+	public int no3 = 0;
 
 	// Use this for initialization
 	void Start () { 
@@ -22,6 +24,7 @@ public class Stage : MonoBehaviour {
 		itemer = GameObject.Find ("Player/hashiru");
 		takeItem = itemer.GetComponent<Player> ();
 
+		// 食材の獲得数を0にする
 		LabelGohan.text = "×0";
 		LabelNiku.text = "×0";
 		LabelTamago.text ="×0";
@@ -30,12 +33,14 @@ public class Stage : MonoBehaviour {
 
 	void Update(){
 
+		// Playerが食材を取得(Destroy)したら処理をする
 		if (takeItem.wake) {
 			ItemGet ();
 			takeItem.wake = false;
 		}
 	}
 
+	// 食材個数のUIの更新
 	void ItemGet(){
 		string itemName = takeItem.getItem;
 		if ( itemName == "gohan(Clone)") {
