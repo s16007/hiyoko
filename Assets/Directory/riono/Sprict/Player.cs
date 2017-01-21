@@ -2,19 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Plyaer : MonoBehaviour {
-		// speedを制御する
+public class Player : MonoBehaviour {
+	// speedを制御する
 	public float thrust = 10;
 
 	Rigidbody2D rd;
-	Collider cd;
+	public string getItem;
+	public bool wake;
 	GameObject item;
 
-	Item itemCo = new Item ();
-//	GameObject item;
-
-
-
+	// デバッグ用移動
 	void FixedUpdate() {
 
 		rd = GetComponent<Rigidbody2D> ();
@@ -28,7 +25,9 @@ public class Plyaer : MonoBehaviour {
 
 	// Itemをステージ上から削除
 	void OnTriggerEnter2D(Collider2D col){
+		getItem = col.gameObject.name;
 		Destroy (col.gameObject);
+		wake = true;
 
 	}
 }
