@@ -4,16 +4,32 @@ using UnityEngine;
 
 public class Plyaer : MonoBehaviour {
 		// speedを制御する
-		public float speed = 10;
+	public float thrust = 10;
 
-		void FixedUpdate ()
-		{
-			float x =  Input.GetAxis("Horizontal");
-			float z = Input.GetAxis("Vertical");
+	Rigidbody2D rd;
+	Collider cd;
+	GameObject item;
 
-			Rigidbody rigidbody = GetComponent<Rigidbody>();
+	Item itemCo = new Item ();
+//	GameObject item;
 
-			// xとyにspeedを掛ける
-			rigidbody.AddForce(x * speed, 0, z * speed);
+
+
+	void FixedUpdate() {
+
+		rd = GetComponent<Rigidbody2D> ();
+
+		if (Input.GetKey (KeyCode.RightArrow)) {
+			rd.AddForce (transform.right * thrust);
+		} else if (Input.GetKey (KeyCode.LeftArrow)) {
+			rd.AddForce (transform.right * (-thrust));
 		}
 	}
+
+	// Itemをステージ上から削除
+	void OnTriggerEnter2D(Collider2D col){
+		Destroy (col.gameObject);
+
+	}
+}
+
