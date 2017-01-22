@@ -21,11 +21,19 @@ public class HiyokoBehaviour : MonoBehaviour {
 	}
 
 	IEnumerator gameover(){
-		while(!player.isDead){yield return null;}
+		transform.DOJump(transform.position, 1, 1, 1f).SetLoops(-1);
+		while(!player.isDead){
+			/*
+			float initHeight = transform.position.y;
+			transform.position =
+				new Vector2(transform.position.x, Mathf.PingPong(Time.time, 0.5f) +5.5f);
+				*/
+			yield return null;
+		}
 
 		transform.DOMove(gameoverPosition, slideSpeed).SetEase(Ease.OutCubic);
 
-		yield return new WaitForSeconds(slideSpeed+2);
+		yield return new WaitForSeconds(slideSpeed+10);
 
 		SceneManager.LoadScene(resultSceneName);
 	}

@@ -121,9 +121,9 @@ MonoBehaviour:
   hitCollider: {fileID: 70485757713661224}
   jumpPower: 20
   jumpTime: 0.3
-  eggValue: 1
-  chickenValue: 1
-  riceValue: 1
+  eggValue: 0
+  chickenValue: 0
+  riceValue: 0
   isDead: 0
 --- !u!212 &212943630130684918
 SpriteRenderer:
