@@ -40,6 +40,8 @@ public class PlayerBehaviour : MonoBehaviour {
 	private bool isGrounded = false;
 	public bool isDead = false;
 
+	private IEnumerator openDistanceCo;
+
 	// Use this for initialization
 	void Start () {
 		StartCoroutine(jump());
@@ -67,19 +69,40 @@ public class PlayerBehaviour : MonoBehaviour {
 			--chickenValue;
 			--riceValue;
 
-			openDistance(1.0f);
+			if(openDistanceCo != null){StopCoroutine(openDistanceCo);}
+			openDistanceCo = openDistance(1.0f);
+			StartCoroutine(openDistanceCo);
 		}
 	}
 
 	void damage(){
-		openDistance(-2.0f);
+		if(openDistanceCo != null){StopCoroutine(openDistanceCo);}
+		openDistanceCo = openDistance(-2.0f);
+		StartCoroutine(openDistanceCo);
 	}
 
-	void openDistance(float length){
+	IEnumerator openDistance(float length){
 		//Debug.Log("Open Disntance");
 
 		transform.DOMoveX(transform.position.x + length, 0.5f).SetEase(Ease.OutSine);
 
+		//本当はDOTweenを使いたいが再配布を許可しているかどうか分からなかった
+		/*
+		float time = 0.5f;
+		while(time > 0.0f){
+			Vector2 velocity = rigidBody.velocity;
+			velocity.x = length;
+			rigidBody.velocity = velocity;
+
+			time -= Time.deltaTime;
+			yield return null;
+		}
+		Vector2 zeroVelocity = rigidBody.velocity;
+		zeroVelocity.x = 0.0f;
+		rigidBody.velocity = zeroVelocity;
+        */
+
+		yield return null;
 	}
 
 	void OnCollisionEnter2D(Collision2D collision){
