@@ -1,15 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlayerBehaviour : MonoBehaviour {
 	public Rigidbody2D rigidBody;
+	public Collider2D hitCollider;
 	public float jumpPower = 20.0f;
 	public float jumpTime = 0.3f;
 
 	[SerializeField]
 	private int eggValue = 0;
+	[SerializeField]
 	private int chickenValue = 0;
+	[SerializeField]
 	private int riceValue = 0;
 
 	public int EggValue{
@@ -34,9 +38,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	}
 
 	private bool isGrounded = false;
-	private bool isDead = false;
-
-	private IEnumerator openDistanceCo;
+	public bool isDead = false;
 
 	// Use this for initialization
 	void Start () {
@@ -65,36 +67,19 @@ public class PlayerBehaviour : MonoBehaviour {
 			--chickenValue;
 			--riceValue;
 
-			if(openDistanceCo != null){StopCoroutine(openDistanceCo);}
-			openDistanceCo = openDistance(5.0f);
-			StartCoroutine(openDistanceCo);
+			openDistance(1.0f);
 		}
 	}
 
 	void damage(){
-		if(openDistanceCo != null){StopCoroutine(openDistanceCo);}
-		openDistanceCo = openDistance(-6.0f);
-		StartCoroutine(openDistanceCo);
+		openDistance(-2.0f);
 	}
 
-	IEnumerator openDistance(float length){
+	void openDistance(float length){
 		//Debug.Log("Open Disntance");
 
-		//本当はDOTweenを使いたいが再配布を許可しているかどうか分からなかった
-		float time = 0.5f;
-		while(time > 0.0f){
-			Vector2 velocity = rigidBody.velocity;
-			velocity.x = length;
-			rigidBody.velocity = velocity;
+		transform.DOMoveX(transform.position.x + length, 0.5f).SetEase(Ease.OutSine);
 
-			time -= Time.deltaTime;
-			yield return null;
-		}
-		Vector2 zeroVelocity = rigidBody.velocity;
-		zeroVelocity.x = 0.0f;
-		rigidBody.velocity = zeroVelocity;
-
-		yield return null;
 	}
 
 	void OnCollisionEnter2D(Collision2D collision){
@@ -129,7 +114,8 @@ public class PlayerBehaviour : MonoBehaviour {
 		if(other.tag == "Enemy"){
 			Debug.Log("Dead");
 			isDead = true;
-			//rigidBody.bodyType = RigidbodyType2D.Kinematic;
+			rigidBody.bodyType = RigidbodyType2D.Kinematic;
+			hitCollider.enabled = false;
 		}
 	}
 

@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4300910949457254}
-  - component: {fileID: 58455306328057444}
   - component: {fileID: 114932086973907622}
   - component: {fileID: 50724474156220760}
+  - component: {fileID: 61718069815097766}
   m_Layer: 0
   m_Name: Stage Template3
   m_TagString: Stage
@@ -265,20 +265,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58455306328057444
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1057053433783338}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: -13, y: -7}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!58 &58828195990973982
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -335,6 +321,20 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 2.5, y: 4}
+--- !u!61 &61718069815097766
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1057053433783338}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: -7}
+  serializedVersion: 2
+  m_Size: {x: 26, y: 1}
 --- !u!114 &114247401416604740
 MonoBehaviour:
   m_ObjectHideFlags: 1
