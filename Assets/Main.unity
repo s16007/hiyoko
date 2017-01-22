@@ -382,7 +382,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xD799"
+  m_Text: "\xD700"
 --- !u!222 &378985412
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -650,7 +650,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xD799"
+  m_Text: "\xD700"
 --- !u!222 &642421974
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -844,7 +844,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\xD799"
+  m_Text: "\xD700"
 --- !u!222 &780550322
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -859,6 +859,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1696872917}
     m_Modifications:
+    - target: {fileID: 114941989360967164, guid: 273398007091d4c9aa4f2f9e5dc888fd,
+        type: 2}
+      propertyPath: stageList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4298424888783610, guid: 273398007091d4c9aa4f2f9e5dc888fd, type: 2}
       propertyPath: m_LocalPosition.x
       value: -10.5
@@ -891,6 +896,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114941989360967164, guid: 273398007091d4c9aa4f2f9e5dc888fd,
+        type: 2}
+      propertyPath: stageList.Array.data[3]
+      value: 
+      objectReference: {fileID: 1159598058178798, guid: c607e5ee1945646058b23f98e030240f,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 273398007091d4c9aa4f2f9e5dc888fd, type: 2}
   m_IsPrefabParent: 0
@@ -1013,7 +1024,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 9999
+  m_Text: 0000
 --- !u!222 &1069495071
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1521,7 +1532,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 04ff9cd3904f1214bb5a16257d506cbd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 295970370b3424330867da7a91c93f66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1584,7 +1595,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: e7f6841d07416b14b9d0ba09ff92f08d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
