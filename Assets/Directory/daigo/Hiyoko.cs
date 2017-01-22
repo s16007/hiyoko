@@ -11,6 +11,6 @@ public class Hiyoko : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = new Vector3(transform.position.x, Mathf.PingPong(Time.time, 0.5f) +5, transform.position.z);
+        transform.position = new Vector3(transform.position.x, Mathf.PingPong(Time.time, 0.5f) +5.5f, transform.position.z);
     }
 }
