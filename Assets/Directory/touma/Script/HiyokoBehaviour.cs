@@ -33,7 +33,15 @@ public class HiyokoBehaviour : MonoBehaviour {
 
 		transform.DOMove(gameoverPosition, slideSpeed).SetEase(Ease.OutCubic);
 
-		yield return new WaitForSeconds(slideSpeed+10);
+
+		float time = slideSpeed;
+		while(time > 0.0f){
+			time -= Time.deltaTime;
+			yield return null;
+		}
+		//yield return null;
+
+		//yield return new WaitForSeconds(slideSpeed+2);
 
 		SceneManager.LoadScene(resultSceneName);
 	}
