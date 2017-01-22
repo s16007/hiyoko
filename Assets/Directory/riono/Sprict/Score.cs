@@ -37,9 +37,9 @@ public class Score : MonoBehaviour {
 			DateTime.Now.Second * 1000 + DateTime.Now.Millisecond;
 
 		duration = nowtime - starttime;
-		score = CalScore ();
 
-		scorelabel.text = "SCORE : " + score;
+		score = CalScore ();
+		scorelabel.text = "" + score;
 	}
 		
 	int CalScore(){
