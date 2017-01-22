@@ -4,17 +4,4 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 0
-    path: Assets/Directory/riono/Scene/Test.unity
-<<<<<<< HEAD
-  - enabled: 0
-    path: Assets/Directory/riono/Scene/Titell.unity
-=======
-  - enabled: 1
-    path: Assets/Directory/riono/Scene/Title.unity
->>>>>>> 0f3ae5ecdb2bf4b21ce3fe96d3f540593c4efc20
-  - enabled: 1
-    path: Assets/Main.unity
-  - enabled: 0
-    path: Assets/Directory/touma/Test.unity
+  m_Scenes: []
