@@ -32,6 +32,7 @@ public class ItemSetter: MonoBehaviour {
 		SetItem ();
 	}
 
+	// デバッグ用
 	void Update(){
 		if (Input.GetKeyUp (KeyCode.Space)) {
 			SetItem ();
