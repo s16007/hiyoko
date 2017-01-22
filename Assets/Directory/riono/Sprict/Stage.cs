@@ -20,7 +20,7 @@ public class Stage : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () { 
-
+		// Playerクラスを利用可能にする
 		itemer = GameObject.Find ("Player/hashiru");
 		takeItem = itemer.GetComponent<Player> ();
 
